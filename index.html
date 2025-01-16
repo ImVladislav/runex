@@ -705,10 +705,16 @@ class="__className_36bd41">
                 /* Контейнер для кнопок */
                 .tokenomics-buttons {
                     display: grid;
-                    grid-template-columns: repeat(2, 200px);
-                    grid-gap: 20px;
+                    grid-template-columns: repeat(2, 164px);
+                    grid-gap: 10px;
                     justify-content: center;
                 }
+                @media screen and (min-width: 468px) {
+                    .tokenomics-buttons {
+                        grid-gap: 20px;
+                    grid-template-columns: repeat(2, 200px);
+                }                
+            }
             
                 /* Стиль кнопок */
                 .tokenomics-button {
