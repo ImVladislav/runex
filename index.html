@@ -1263,6 +1263,60 @@ function restartGame() {
     document.querySelector('.over.win').style.left = '-100vw';
 }
 </script>
+
+<!-- Кнопка для відтворення музики -->
+<button id="music-btn">🎵</button>
+
+<!-- Додайте аудіофайл -->
+<audio id="background-music" src="1.mp3" preload="auto"></audio>
+
+<style>
+/* Стилі для кнопки музики */
+#music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f1c40f;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+#music-btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.1);
+}
+
+#music-btn.active {
+    background-color: #27ae60;
+}
+</style>
+
+<script>
+// Знаходимо кнопку та аудіофайл
+const musicButton = document.getElementById('music-btn');
+const backgroundMusic = document.getElementById('background-music');
+
+// Обробник події для кнопки
+musicButton.addEventListener('click', function() {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        musicButton.classList.add('active'); // Змінюємо колір кнопки
+    } else {
+        backgroundMusic.pause();
+        musicButton.classList.remove('active');
+    }
+});
+</script>
+
+
+
 </script>
             <div class="w-full p-4 py-8 flex items-center flex-col gap-8 backdrop-blur-sm mt-20">
                 <p class="text-9xl max-lg:text-4xl text-white blackground text-center dela up">RUNEX</p><a
